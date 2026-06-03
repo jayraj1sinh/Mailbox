@@ -1,0 +1,220 @@
+<div class="mailbox">
+
+  <aside class="sidebar">
+
+    <div class="profile">
+      <img src="asset/images/joseph-gonzalez-iFgRcqHznqg-unsplash.png" alt="">
+      <div>
+        <h4>Mike Manson</h4>
+        <span>iamkiran@gmail.com</span>
+      </div>
+    </div>
+
+    <nav>
+
+      <button class="active">
+<img src="asset/images/noun_contact_2984932.svg" alt="">  Inbox
+  <small>20</small>
+</button>
+
+      <button>
+  <img src="asset/images/noun_Star_2986785.svg" alt="">Flagged</button>
+     <button>
+  <img src="asset/images/noun_Box_2466558.svg" alt="">Draft</button>
+      <button>
+  <img src="asset/images/noun_sent_61680.svg" alt="">Sent</button>
+      <button>
+  <img src="asset/images/noun_Trash_1526083.svg" alt="">Trash</button>
+      <button>☰ More</button>
+
+    </nav>
+
+    <div class="folders">
+
+      <div class="folder-head">
+        <h3>Folders</h3>
+        <button>Add</button>
+      </div>
+
+      <div class="folder">
+  <img src="asset/images/noun_Folder_1558235.svg" alt="">
+  Office
+</div>
+
+<div class="folder">
+  <img src="asset/images/noun_Folder_1558235-1.svg" alt="">
+  Personal
+</div>
+
+<div class="folder">
+  <img src="asset/images/noun_Folder_1558235-2.svg" alt="">
+  Freelance
+</div>
+
+    </div>
+
+    <button class="compose">
+      Compose
+    </button>
+
+  </aside>
+
+  <section class="mail-list">
+
+    <div class="search">
+      <input placeholder="Search">
+    </div>
+
+    @for(mail of mails; track mail.name; let i = $index){
+
+    <article
+  class="mail-card"
+  [class.selected]="selectedMail === i"
+  (click)="selectMail(i)"
+>
+
+  <img [src]="mail.avatar" alt="">
+
+  <div class="content">
+    <div class="top">
+      <h4>{{mail.name}}</h4>
+      <span>{{mail.day}} {{mail.time}}</span>
+    </div>
+
+    <h5>{{mail.title}}</h5>
+
+    <p>{{mail.message}}</p>
+    @if(i === 0){
+<div class="mail-attachment">
+  <img
+    src="asset/images/noun_Attachment_1084336.svg"
+    alt=""
+  >
+  <span>4 Attachments</span>
+</div>
+}
+  </div>
+
+</article>
+    }
+
+  </section>
+
+  <section class="mail-view">
+
+  <div class="mail-top">
+
+    <div class="toolbar">
+      <img src="asset/images/Group 25.svg" alt="">
+    </div>
+
+    <div class="pager">
+      <span>1/180</span>
+      <img src="asset/images/Group 23.svg" alt="">
+      <img src="asset/images/Group 23.svg" class="rotate" alt="">
+    </div>
+
+  </div>
+
+  <div class="mail-header">
+
+    <img [src]="activeMail.avatar" alt="">
+
+    <div class="sender-info">
+      <h3>{{activeMail.name}}</h3>
+      <p>{{activeMail.title}}</p>
+      <span>sammiller@gmail.com</span>
+    </div>
+
+  </div>
+
+  <div class="mail-time">
+    Today 08:45 PM
+  </div>
+
+  <div class="mail-content">
+
+    <h2>Hi Mike,</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Vestibulum fermentum facilisis libero, venenatis mattis orci
+      hendrerit eget. Etiam ultrices mollis justo, nec fermentum elit
+      viverra eu.
+    </p>
+
+    <p>
+      Cras at cursus turpis. Nullam magna sem, vulputate quis massa nec,
+      mollis sollicitudin dui. Sed eu massa in arcu pharetra posuere.
+    </p>
+
+    <div class="attachment-head">
+
+      <img
+        src="asset/images/noun_Attachment_1084336.svg"
+        alt=""
+      >
+
+      <span>4 Attachments</span>
+
+    </div>
+
+    <div class="attachment-grid">
+
+      <div class="left-grid">
+
+        <img
+          src="asset/images/pexels-photo-2977302.png"
+          alt=""
+        >
+
+        <img
+          src="asset/images/pexels-photo-2923672.png"
+          alt=""
+        >
+
+      </div>
+
+      <img
+        class="big-image"
+        src="asset/images/pexels-photo-2533686.png"
+        alt=""
+      >
+
+      <img
+        class="big-image"
+        src="asset/images/pexels-photo-2694453.png"
+        alt=""
+      >
+
+    </div>
+
+    <div class="download-row">
+
+      <button class="download-btn">
+        Download
+      </button>
+
+      <span>5.6 mb total</span>
+
+    </div>
+
+  </div>
+
+  <div class="reply">
+
+    <input placeholder="Type Message...">
+
+    <button class="send-btn">
+      <img src="asset/images/1933005.svg" alt="">
+    </button>
+
+  </div>
+
+  <div class="footer">
+    © Copyright 2005 - 2019 Lorem Ipsum
+  </div>
+
+</section>
+
+</div>
