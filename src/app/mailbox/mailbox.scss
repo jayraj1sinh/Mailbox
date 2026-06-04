@@ -489,48 +489,26 @@ nav {
   color: #c4c4c4;
 }
 
-@media (max-width: 768px) {
-
-  .mailbox {
-    grid-template-columns: 1fr;
-  }
-
-  .attachment-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .big-image {
-    height: 220px;
-  }
-
-  .reply {
-    flex-direction: row;
-  }
-
-  .mail-top {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
+.mobile-menu {
+  display: none;
 }
-@media (max-width: 1200px) {
 
-  .mailbox {
-    grid-template-columns: 220px 320px 1fr;
-  }
-
-  .sidebar {
-    padding: 18px;
-  }
-
-  .mail-list {
-    padding: 18px;
-  }
-
-  .mail-view {
-    padding: 18px;
-  }
+.back-btn {
+  display: none;
 }
+
+.sidebar-open {
+  left: 0 !important;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+.show-mobile {
+  display: flex !important;
+}
+
 
 @media (max-width: 992px) {
 
@@ -547,14 +525,43 @@ nav {
   }
 }
 
+
 @media (max-width: 768px) {
 
   .mailbox {
     grid-template-columns: 1fr;
   }
 
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+
+    cursor: pointer;
+  }
+
   .sidebar {
-    display: none;
+    position: fixed;
+    left: -280px;
+    top: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    z-index: 999;
+
+    transition: .3s;
   }
 
   .mail-list {
@@ -562,64 +569,36 @@ nav {
     padding: 16px;
   }
 
-  .search input {
-    height: 48px;
+  .mail-view {
+    display: none;
   }
 
-  .mail-card {
-    padding: 14px;
-  }
-
-  .mail-card h4 {
-    font-size: 16px;
-  }
-
-  .mail-card h5 {
-    font-size: 14px;
-  }
-
-  .mail-card p {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .mail-list {
-    padding: 12px;
-  }
-
-  .mail-card {
-    gap: 10px;
-    padding: 12px;
-    border-radius: 14px;
-  }
-
-  .mail-card img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .top {
+  .show-mobile {
+    display: flex !important;
     flex-direction: column;
-    gap: 4px;
-    align-items: flex-start;
   }
 
-  .top span {
-    font-size: 11px;
+  .hide-mobile {
+    display: none;
   }
 
-  .mail-card h4 {
-    font-size: 15px;
+  .back-btn {
+    display: block;
+
+    border: none;
+    background: transparent;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+    cursor: pointer;
   }
 
-  .mail-card h5 {
-    font-size: 13px;
-  }
-
-  .mail-card p {
-    font-size: 12px;
-    line-height: 1.4;
+  .reply {
+    position: sticky;
+    bottom: 0;
+    background: white;
   }
 }

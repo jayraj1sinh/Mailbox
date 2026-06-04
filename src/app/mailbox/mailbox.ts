@@ -10,7 +10,9 @@ import { MailCardComponent } from '../mail-card/mail-card';
 })
 export class Mailbox {
   selectedMail = 0;
-
+  isMobileView = false;
+  showSidebar = false;
+  showMailView = false;
   folders = [
     { name: 'Office', color: '#4f6fff' },
     { name: 'Personal', color: '#ff8f9f' },
@@ -60,7 +62,19 @@ export class Mailbox {
     return this.mails[this.selectedMail];
   }
 
-  selectMail(index: number) {
-    this.selectedMail = index;
+ selectMail(index: number) {
+  this.selectedMail = index;
+
+  if (window.innerWidth <= 768) {
+    this.showMailView = true;
   }
+}
+
+goBack() {
+  this.showMailView = false;
+}
+
+toggleSidebar() {
+  this.showSidebar = !this.showSidebar;
+}
 }

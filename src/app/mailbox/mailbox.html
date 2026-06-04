@@ -1,6 +1,16 @@
 <div class="mailbox">
 
-  <aside class="sidebar">
+<button
+  class="mobile-menu"
+  (click)="toggleSidebar()"
+>
+☰
+</button>
+
+  <aside
+  class="sidebar"
+  [class.sidebar-open]="showSidebar"
+>
 
     <div class="profile">
       <img src="asset/images/joseph-gonzalez-iFgRcqHznqg-unsplash.png" alt="">
@@ -59,7 +69,10 @@
 
   </aside>
 
-  <section class="mail-list">
+  <section
+  class="mail-list"
+  [class.hide-mobile]="showMailView"
+>
 
     <div class="search">
       <input placeholder="Search">
@@ -100,8 +113,16 @@
 
   </section>
 
-  <section class="mail-view">
-
+  <section
+  class="mail-view"
+  [class.show-mobile]="showMailView"
+>
+<button
+  class="back-btn"
+  (click)="goBack()"
+>
+← Back
+</button>
   <div class="mail-top">
 
     <div class="toolbar">
